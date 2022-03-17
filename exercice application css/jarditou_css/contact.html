@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Jarditou</title>
+<link href="assets/css/style.css" rel="stylesheet">   <!-- lien CSS -->  
+
+</head>
+<body>
+    
+<!-- entête -->
+<header>
+  <div class="header">
+    <div class="logo" id="logo">
+      <img src="src/img/jarditou_logo.jpg"
+          alt="logo_jarditou"
+          width="300"
+          height="100">
+    </div>
+        <div class="titre" id="titre">
+          <p>Tout le jardin</p>
+        </div>
+  </div>
+</header>
+
+<!-- nav -->
+<nav>
+
+  <div class="nav">     <!-- ajout class css -->
+    <div class="index" id="index">    <!-- ajout id css -->
+      <ul> 
+        <li>
+          <a href="index.html">Accueil</a>
+        </li>
+    </div>
+    <div class="tableau" id=tableau>
+        <li>
+          <a href="tableau.html">Tableau</a>
+        </li>
+    </div>
+    <div class="contact" id="contact">
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+    </div>    
+      </ul>
+  </div>
+
+</nav>
+
+<!-- <br> -->
+<img src="src/img/promotion.jpg"
+alt="promotion"
+width="100%"
+height="auto">
+
+
+<!-- section -->
+    <section>
+        <h2>Contact</h2>
+          <hr>
+            <p>*Ces zones sont obligatoires</p>
+
+<!-- formulaire -->
+    <form action="http://bienvu.net/script.php" method="get" id="formulaire_contact">
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+                <label for="nom">Votre Nom* : </label>
+                    <input type="text" name="nom" id="nom">
+                        <br>
+                <label for="prenom">Votre préom* : </label>
+                    <input type="text" name="nom" id="prenom">
+                        <br>
+                <label for="sexe">Sexe : </label>
+                    <input type="radio" name="couleur" value="Bleu"  id="sexe"> Féminin
+                    <input type="radio" name="couleur" value="Bleu"> Masculin
+                        <br>
+                <label for="date">Date de naissance* : </label>
+                    <input type="date" name="ddn" id="date">
+                        <br>
+                <label for="code_postal">Code postal* : </label>
+                    <input type="text" name="code_postal" id="code_postal">
+                        <br>
+                <label for="adresse">Adresse : </label>
+                    <input type="text" name="adresse" id="adresse">
+                        <br>
+                <label for="ville">Ville : </label>
+                    <input type="text" name="ville" id="ville">
+                        <br>
+                <label for="email">Email *:</label>
+                    <input type="email" name="email" id="email" value="Dave.LOPER@afpa.fr">
+                        <br>
+        </fieldset>
+        <fieldset>
+            <legend>Votre demande</legend>
+                <label for="sujet" >Sujet* : </label>
+                    <select id="sujet">
+                           <option>Veuillez séléctionner un sujet</option>
+                        <option>Mes commandes</option>
+                        <option>Question sur un produit</option>
+                        <option>Réclamations</option>
+                      <option>Autres</option>
+                    </select>
+                        <br>
+            Votre question* : <textarea name="votre_question" rows="5" cols="20"></textarea>
+        </fieldset>
+            <input type="checkbox" name="couleur2" value="Rouge"> * J'accepte le traitement informatique de ce formulaire
+    <br>
+            <input type="submit" value="Envoyer">
+            <input type="reset" value="Annuler">
+        
+    </form>
+    </section>
+      <hr>
+   
+      <footer>
+        <div class="footer">
+          <div class="mention_legale" id="mention_legale">
+            <ul> 
+              <li>
+                <a href="mention_legale.html">Mention légales</a>
+              </li>
+          </div>
+          <div class="horaires" id="horaires">
+            <li>
+              <a href="horaires.html">Horaires</a>
+            </li>
+          </div>
+          <div class="plan_du_site" id="plan_du_site">
+            <li>
+              <a href="plan_du_site.html">Plan du site</a>
+            </li>
+        </div>
+            </ul>
+        </div>
+        </footer>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* header */
+.logo {
+  border: auto solid black;
+  display: inline-block;
+}
+
+.titre {
+  border: auto solid black;
+  display: inline-block;
+  
+}
+
+#titre {
+  position: absolute;
+  top:25px;
+  left: 50%;
+  font-size: 18pt;
+  font-weight: 300;
+}
+
+
+/* nav */
+.nav {
+  border: auto black solid;
+  display: block;
+  background-color: black;
+  margin: 10px 0 10px 0;
+}
+#index {
+  display: inline-block;
+  margin: 0 20px 0 10px;
+}
+
+#tableau {
+  display: inline-block;
+  margin: 0 20px 0 10px;
+}
+
+#contact {
+  display: inline-block;
+  margin: 0 20px 0 10px;
+}
+
+/* couleur texte nav et footer */
+a {
+  color: white;
+}
+
+
+/* side bar */
+.accueil {      /* parent */
+  border: auto solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.colonne_droite{    /* container */
+  display: flex;
+  background: grey;
+  justify-content: flex-start;
+  margin: 5px 0 10px 0;
+  flex-grow: 4;
+}
+
+
+
+
+/* footer */
+.footer {
+  border: auto solid black;
+  display: block;
+  background-color: black;
+}
+
+#mention_legale{
+  display: inline-block;
+  margin: 0 20px 0 10px;
+}
+
+#horaires {
+  display: inline-block;
+  margin: 0 20px 0 10px;
+}
+
+#plan_du_site {
+  display: inline-block;
+  margin: 0 20px 0 10px;
+}
