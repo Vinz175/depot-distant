@@ -1,0 +1,56 @@
+/* header */
+header {
+  display: block;
+}
+
+
+
+.titre {
+  display: block;
+  margin-left: 50%;
+  margin-right: auto;
+  margin-top: -6%;
+  margin-bottom: 5%;
+}
+
+
+/* nav */
+.nav {
+  /* border:  black solid; */
+  display: flex;
+  background-color: black;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+/* couleur texte nav et footer */
+a {
+  color: white;
+}
+
+
+/* side bar */
+.accueil {      /* parent */
+  border: auto solid black;
+  display: flex;
+}
+
+.colonne_droite {    /* container */
+  background: grey;  
+  margin: 5px 0 5px 0;
+  width: 45%;
+  height: auto;
+}
+
+li{
+  display: inline;
+  margin-left: 0.5rem;
+}
+/* footer */
+.footer {
+  display: flex;
+  background-color: black;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+}
