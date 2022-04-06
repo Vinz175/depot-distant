@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Jarditou</title>
+  <link href="assets/css/style.css" rel="stylesheet">   <!-- lien CSS -->
+
+  <!-- ajout balise meta pour le responive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <!-- Balise meta responsive -->
+  
+  <!-- ajout lien css pour le responsive -->
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="assets/css/desktop.css">
+  
+</head>
+<body>
+    
+<!-- entête -->
+<header>
+
+  <img class="logo" src="src/img/jarditou_logo.jpg" title="logo"
+      alt="logo_jarditou"
+      width="30%"
+      height="auto">
+      
+    <div class="titre">
+      <p>Tout le jardin</p>
+    </div>
+  
+</header>
+
+  <!-- nav -->
+  <nav class="nav">
+
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="tableau.html">Tableau</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </nav>
+
+<!-- <br> -->
+<img src="src/img/promotion.jpg"
+    alt="promotion"
+    width="100%"
+    height="auto">
+
+
+<!-- section -->
+    <section>
+        <h2>Contact</h2>
+          <hr>
+            <p>*Ces zones sont obligatoires</p>
+
+<!-- formulaire -->
+    <form action="http://bienvu.net/script.php" method="get" id="formulaire_contact">
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+                <label for="nom">Votre Nom* : </label>
+                    <input type="text" name="nom" id="nom" title = "Minuscules et Majuscules" required>
+                      <span id='missNom'></span><br>
+                        <br>
+                <label for="prenom">Votre prénom* : </label>
+                    <input type="text" name="prenom" id="prenom" title="Minuscules et Majuscules" required>
+                      <span id='missPrenom'></span><br>
+                        <br>
+                <label for="sexe" id="sexe">Sexe* : </label>
+                    <input type="radio" name="sexe" value="F"  id="sexeF"> Féminin
+                    <input type="radio" name="sexe" value="M" id="sexeM"> Masculin
+                      <span id='missSexe'></span>
+                        <br>
+                <label for="date">Date de naissance* : </label>
+                    <input type="date" name="ddn" id="date" title="chiffres">
+                      <span id='missDate'></span><br>
+                        <br>
+                <label for="code_postal">Code postal* : </label>
+                    <input type="text" name="code_postal" id="code_postal" required>
+                      <span id='missCode'></span><br>
+                        <br>
+                <label for="adresse">Adresse : </label>
+                    <input type="text" name="adresse" id="adresse">
+                        <br>
+                <label for="ville">Ville : </label>
+                    <input type="text" name="ville" id="ville">
+                        <br>
+                <label for="email">Email *:</label>
+                    <input type="email" name="email" id="email" value="Dave.LOPER@afpa.fr" required>
+                      <span id='missMail'></span><br>
+                        <br>
+        </fieldset>
+        <fieldset>
+            <legend>Votre demande</legend>
+                <label for="sujet" >Sujet* : </label>
+                    <select id="sujet">
+                        <option value="veuillez_selectionner_un_sujet" selected disabled>Veuillez séléctionner un sujet</option>
+                        <option value="mes_commandes">Mes commandes</option>
+                        <option value="question_sur_un_produit">Question sur un produit</option>
+                        <option value="reclamation">Réclamations</option>
+                      <option>Autres</option>
+                    </select>
+                      <span id='missSujet'></span>
+                        <br>
+            Votre question* : <textarea name="votre_question" id="message" rows="5" cols="20" required></textarea>
+            <span id='missMessage'></span>
+              
+          </fieldset>
+            <input type="checkbox" name="couleur2" value="checkbox" id ="checkbox" required> * J'accepte le traitement informatique de ce formulaire
+
+              <br>
+            <input type="submit" value="Envoyer" id="envoyer">
+            <input type="reset" value="Annuler" id="annuler">
+              <span id='missCheckbox'></span>
+
+    </form>
+    </section>
+      <hr>
+   
+      <footer class="footer">
+        <ul>            
+          <li><a href="mention_legale.html">Mention légales</a></li>
+          <li><a href="horaires.html">Horaires</a></li>
+          <li><a href="plan_du_site.html">Plan du site</a></li>
+        </ul> 
+      </footer>
+
+      <script src="assets/js/script.js"></script>
+</body>
+</html>

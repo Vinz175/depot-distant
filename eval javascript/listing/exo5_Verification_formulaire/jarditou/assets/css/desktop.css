@@ -1,0 +1,58 @@
+/* config responsive */
+
+  
+
+
+    @media screen and (max-width: 768px)  /* média avec une résolution max de 768px */
+    {
+      html {
+        font-size: 100%;
+      }
+
+      
+      h2 {
+        font-size: 1.5rem
+      }
+
+      p {
+        font-size: 1rem
+      }
+
+      /*.titre {
+        display: inline-block;
+      }*/
+
+      .colonne_droite {    /* container */
+        display: none;
+      }
+
+      .nav {
+        display: block;
+        width: 100%;
+      }
+
+      .footer {
+        display:block;
+      } 
+
+      li{
+        display: block;
+      }
+    }
+
+
+ 
+
+
+
+
+
+
+
+
+  /*
+    Un seul breakpoint : 768 pixels.
+    La colonne de droite sera masquée sur les dispositifs mobiles.
+    Sur mobile, les menus doivent s'afficher verticalement.
+    Les polices doivent être redimensionnées
+*/
