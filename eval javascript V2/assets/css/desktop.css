@@ -1,0 +1,55 @@
+/* config responsive */
+
+@media screen and (max-width: 768px)  /* média avec une résolution max de 768px */
+{
+  html 
+  {
+    font-size: 100%;
+  }
+
+  nav {
+    display: block;
+    width: 100%;
+  }
+
+  .btna
+  {
+    display: block;
+  }
+
+
+  footer
+  {
+    display:block;
+  }
+      
+body
+{
+  display: block;
+}
+
+
+
+
+
+
+
+
+}
+
+
+ 
+
+
+
+
+
+
+
+
+  /*
+    Un seul breakpoint : 768 pixels.
+    La colonne de droite sera masquée sur les dispositifs mobiles.
+    Sur mobile, les menus doivent s'afficher verticalement.
+    Les polices doivent être redimensionnées
+*/

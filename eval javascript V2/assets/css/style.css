@@ -1,0 +1,42 @@
+body
+{
+   background-image: url("https://p4.wallpaperbetter.com/wallpaper/867/221/226/razer-4k-wallpaper-preview.jpg");
+   background-position: center;
+   background-position: top;
+   background-size: cover;
+   background-repeat: repeat;
+}
+
+h2
+{
+   text-align: center;
+   color : white;
+}
+h4
+{  
+   text-align: center;
+   color: white;
+   margin-left: 100px;
+}
+h6
+{
+   font-size: 10px;
+   color:rgb(108, 178, 240);
+   position:absolute;
+   bottom: 0px;
+   right: 5px;
+   text-align: right;
+}
+nav
+{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+.btna
+{
+   position: absolute;
+   left: 5rem;
+   top: 15rem;
+   justify-content: space-around;
+}
