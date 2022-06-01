@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Contact</title>
+
+  <!-- ajout balise meta pour le responive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    <!-- Balise meta responsive -->
+  
+<!-- code feuille de style css bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+</head>
+<body>
+  <div class="container-fluid">  
+<!-- entête -->
+<header>
+  <div class="row justify-content-between">
+
+  <img class="col-2 d-none d-sm-block" src="src/img/logo.png" title="logo" alt="logo_jarditou" width="30%" height="auto">
+  <h3 class="col-4 align-self-end d-none d-sm-block">Toute votre installation électrique</h3>    </div> <!-- fin div class row -->
+</header>
+
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Alexelec.com</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="carousel.html">#</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="galerie.html">Galerie photo</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Votre promotion" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+      </form>
+    </div>
+  </nav>
+  
+    <img class="promo" src="src/img/promotion.jpg" title="promotion sur les lames de terrasse" alt="promotion" width="100%" height="auto">
+
+
+
+<!-- section -->
+    <section>
+
+            <p>*Ces zones sont obligatoires</p>
+
+<!-- formulaire -->
+<form class="form-block" action="serveur/PHP/formscript.php" method="GET" id="formulaire_contact">
+  <fieldset>
+      <legend>Vos coordonnées</legend>
+          <label for="nom">Votre Nom* : </label>
+              <input class="form-control mr-sm-2" type="text" name="nom" id="nom" title = "Minuscules et Majuscules" required>
+                <span id='missNom'></span>
+                
+          <label for="prenom">Votre prénom* : </label>
+              <input class="form-control mr-sm-2" type="text" name="prenom" id="prenom" title="Minuscules et Majuscules" required>
+                <span id='missPrenom'></span>
+                 
+          <label for="date">Date de naissance* : </label>
+              <input class="form-control mr-sm-2" type="date" name="ddn" id="date" title="chiffres">
+                <span id='missDate'></span>
+
+          <label for="code_postal">Code postal* : </label>
+              <input class="form-control mr-sm-2" type="text" name="code_postal" id="code_postal" required>
+                <span id='missCode'></span>
+
+          <label for="adresse">Adresse : </label>
+              <input class="form-control mr-sm-2" type="text" name="adresse" id="adresse">
+
+          <label for="ville">Ville : </label>
+              <input class="form-control mr-sm-2" type="text" name="ville" id="ville">
+
+          <label for="email">Email *:</label>
+              <input class="form-control mr-sm-2" type="email" name="email" id="email" value="Dave.LOPER@afpa.fr" required>
+                <span id='missMail'></span><br>
+
+  </fieldset>
+  <fieldset>
+      <legend>Votre demande</legend>
+          <label for="sujet" >Sujet* : </label>
+              <select class="form-control mr-sm-2" name="sujet" id="sujet">
+                  <option value="veuillez_selectionner_un_sujet" selected disabled>Veuillez séléctionner un sujet</option>
+                  <option value="demande_de_devis">Demande de devis</option>
+                  <option value="question_sur_un_produit">Question sur un produit</option>
+                  <option value="reclamation">Réclamations</option>
+                <option>Autres</option>
+              </select>
+                <span id='missSujet'></span>
+
+      Votre question* : <textarea class="form-control mr-sm-2" name="votre_question" id="message" rows="5" cols="20" required></textarea>
+      <span id='missMessage'></span>
+        
+    </fieldset>
+      <input type="checkbox" name="couleur2" value="checkbox" id ="checkbox" required> * J'accepte le traitement informatique de ce formulaire
+        <br>
+      <input class="btn-dark" type="submit" name='submit' value="Envoyer" id="envoyer">
+      <input class="btn-dark" type="reset" value="Annuler" id="annuler">
+        <span id='missCheckbox'></span>
+
+</form>
+    </section>
+      <hr>
+   
+      <footer class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footer" aria-controls="footer" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="footer">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="mention_legale.html">Mention légale</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="horaires.html">Horaires</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="plan_du_site.html">Plan du site</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+      <!-- <script src="assets/js/script.js"></script>-->
+  </div> <!-- fin div class container -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
