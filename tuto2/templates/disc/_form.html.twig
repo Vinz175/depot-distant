@@ -1,0 +1,36 @@
+
+{{ form_start(form, {"attr": {"novalidate": "novalidate"}}) }}
+<div class = "row">
+    <div class="col-6">
+        {{ form_label(form.Title)}}
+        {{ form_widget(form.Title) }}
+        {{ form_help(form.Title)}}
+        {{ form_errors(form.Title)}}
+    </div> <!-- fin div col-6 -->
+    <div class="col-6">
+        {{ form_row(form.label) }}
+    <br>
+    </div> <!-- fin div col-6 -->
+    <div class="col-12">
+        {{ form_label(form.year)}}
+        {{ form_widget(form.year) }}
+    <br>
+    </div> <!-- fin div col-12 -->
+    <div class="col-4">
+        {{ form_label(form.artist)}}
+        {{ form_widget(form.artist, {'attr':{'class': 'form-control'}}) }}
+    </div> <!-- fin div col-4 -->
+    <div class="col-4">
+        {{ form_label(form.price)}}
+        {{ form_widget(form.price) }}
+    </div> <!-- fin div col-4 -->
+    <div class="col-4">
+        {{ form_label(form.picture)}}
+        {{ form_widget(form.picture) }}
+    </div> <!-- fin div col-4 -->
+</div> <!-- fin div row -->
+<br>
+    <button class="btn btn-primary col-2 float-right">{{ button_label|default('Sauvegarder') }}</button>
+
+
+{{ form_end(form) }}
