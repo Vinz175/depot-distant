@@ -1,4 +1,8 @@
 security:
+    role_hierarchy:
+        ROLE_USER:       ROLE_USER
+        ROLE_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
     enable_authenticator_manager: true
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
@@ -23,6 +27,8 @@ security:
                 login_path: login
                 check_path: login
                 enable_csrf: true
+            logout:
+                path: app_logout
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 

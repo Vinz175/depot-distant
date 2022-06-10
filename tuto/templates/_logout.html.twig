@@ -1,0 +1,7 @@
+<div class = "d-flex align-items-end flex-column p-2">
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <a href="{{asset('logout')}}" class="btn btn-primary" type="submit" class="btn">Se déconnecter</a>
+        
+    {% endif %}
+</div>
+
