@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+    {% block body %}
+    <div class="container">
+        {# <div class="row mt-5">
+            <div class="col-sm-8 offset-sm-2">
+                <h1>Première page web avec Symfony</h1>
+                <p>Hello World !!!</p>
+            </div>
+        </div> #}
+        <div class="text-center">
+        <br>
+            <span>bienvenue sur notre site Velvet Record</span>
+            <br>
+            <span>Pour visualiser le contenu, merci de vous connecter ou de vous enregistrer</span>
+        </div>
+        <br>
+            <div class="row justify-content-center">
+                <a class="btn btn-secondary ml-2" href="{{ path("app_login") }}">Se connecter</a>
+                <a class="btn btn-secondary ml-2" href="{{ path("app_register") }}">S'enregistrer</a>
+            </div>
+
+    </div>
+
+
+
+    {% endblock %}

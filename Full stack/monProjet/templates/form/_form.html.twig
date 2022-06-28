@@ -1,0 +1,22 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.Title) }}
+        </div> <!-- fin div col-6 -->
+
+        <div class="col-6">
+            {{ form_row(form.label) }}
+        </div> <!-- fin div col-6 -->
+    
+        <div class="col-4 align-self-center">
+            {{ form_row(form.artist) }}
+        </div> <!-- fin div-->
+            
+        <div class="col-8">
+            {{ form_row(form.picture) }}
+        </div> <!-- fin div col-6 -->
+    
+    </div> <!-- fin div row -->
+    {{ form_widget(form) }}
+    <button class="btn btn-secondary float-right mr-4">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

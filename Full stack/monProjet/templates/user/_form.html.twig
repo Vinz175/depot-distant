@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+
+
+    <div class="row">
+        <div class="col-4">
+            {{ form_row(form.email) }}
+        </div> <!-- fin div col-6 -->
+    </div>
+    <div class="row">
+        <div class="col-8">
+            {{ form_row(form.password) }}
+        </div> <!-- fin div col-6 -->
+    </div>
+    {{ form_widget(form) }}
+
+        <button class="btn btn-secondary float-right mr-4">{{ button_label|default('Sauvegarder') }}</button>
+
+{{ form_end(form) }}
