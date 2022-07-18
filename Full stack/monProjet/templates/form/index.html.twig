@@ -3,22 +3,24 @@
 {% block title %}Disc index{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1 class="text-center">Disc index</h1>
+{# <div class="container">
+    <h1 class="text-center">liste des disques</h1>
         {% if is_granted("ROLE_ADMIN") %}
             <a href="{{ path('app_form_new') }}"><i class="fa-solid fa-plus"></i></a>
         {% endif %}
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 {% if is_granted("ROLE_ADMIN") %}
                     <th>Id</th>
                 {% endif %}
-                    <th>Artist</th>
-                    <th>Title</th>
-                    <th>Picture</th>
+                    <th>Artistes</th>
+                    <th>Titres</th>
+                    <th>Images</th>
                     <th>Label</th>
-                    <th>actions</th>
+                    <!-- <th>Genre</th>
+                    <th>Prix</th> -->
+                    <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +28,7 @@
 
         {% for disc in discs %}
         {# {% dump(disc) %}  #}
-            <tr>
+            {# <tr>
                 {% if is_granted("ROLE_ADMIN") %}
                     <td>{{ disc.id }}</td>
                 {% endif %}
@@ -34,10 +36,12 @@
                     <td>{{ disc.title }}</td>
                     <td>{{ disc.picture }}</td>
                     <td>{{ disc.label }}</td>
-                    <td>
+                    {#  <td>{{ disc.genre }}</td>
+                    <td>{{ disc.prix }}</td>  #}
+{#                    <td>
                         <a href="{{ path('app_form_show', {'id': disc.id}) }}"><i class="fa-solid fa-eye"></i></a>
                         {% if is_granted("ROLE_ADMIN") %}
-                        <a href="{{ path('app_form_edit', {'id': disc.id}) }}">edit</a>
+                        <a href="{{ path('app_form_edit', {'id': disc.id}) }}">Editer</a>
                         {% endif %}
                     </td>
             </tr>
@@ -49,5 +53,32 @@
         </tbody>
     </table>
 
+    </div> #}
+
+<div class="container">
+    {% if is_granted("ROLE_ADMIN") %}
+        <a href="{{ path('app_form_new') }}"><i class="fa-solid fa-circle-plus" title="Ajouter un artiste"></i></a>
+    {% endif %}
+        <div class="grid">
+           {% for disc in discs %}
+
+                <div class="card ml-4">
+                            <img src="{{app.request.basepath}}/images/produit/{{disc.picture}}" alt="" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ disc.title}}</h5>
+                                <div class="card-title">{{ disc.artist.name }}</div>
+                                    <p class="text text-muted">Label: {{ disc.label }}</p>
+                                    <p class="text text-muted">Genre: {{ disc.genre }}</p>
+                                    <p class="text text-primary">Prix: {{ disc.price }}€</p>
+                                    <a class="ml-2" href="{{ path('app_form_show', {'id': disc.id}) }}"><i class="fa-solid fa-eye" title="Visualiser le disque"></i></a>
+                                        {% if is_granted("ROLE_ADMIN") %}
+                                            <a class="ml-2" href="{{ path('app_form_edit', {'id': disc.id}) }}"><i class="fa-solid fa-pen-to-square" title="Editer"></i></a>
+                                        {% endif %}    
+                                </div>
+                </div>
+
+        {% endfor %}
+
     </div>
+</div>
 {% endblock %}

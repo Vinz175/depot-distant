@@ -4,22 +4,48 @@
 
 {% block body %}
 
-            {% for flash_error in app.flashes('verify_email_error') %}
-                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-            {% endfor %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
 
             <h1 class="text-center">S'enregistrer</h1>
     <div class="container">
         <div class="row justify-content-center align-items-center">
             {{ form_start(registrationForm) }}
-                {{ form_row(registrationForm.email) }}
-                {{ form_row(registrationForm.plainPassword, {
-                    label: 'Password'
-                }) }}
+                <div class="row ml-0">
+                    {{ form_row(registrationForm.nom) }}
+                    <div class="ml-4">
+                        {{ form_row(registrationForm.prenom) }}
+                    </div>
+                </div> <!-- fin div row -->
+        <div class="row ml-0">
+            {{ form_row(registrationForm.dob, {
+                label: "Date de naissance"
+            }) }}
+        </div>
+        <div>
+            {{ form_row(registrationForm.adress,{
+                label: "Adresse"
+            }) }}
+        </div>
+        <div class="row ml-0">
+            {{ form_row(registrationForm.codePostal) }}
+            <div class="ml-4">
+            {{ form_row(registrationForm.ville) }}
+            </div>
+        </div>
+        <div>
+            {{ form_row(registrationForm.email) }}
+        </div>
+        <div>
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe'
+            }) }}
+        </div>
                 {{ form_row(registrationForm.agreeTerms) }}
 
                 <button class="btn btn-secondary" type="submit" class="btn">S'enregistrer</button>
             {{ form_end(registrationForm) }}
-        <div>
-    <div>
+        </div>
+    </div>
 {% endblock %}

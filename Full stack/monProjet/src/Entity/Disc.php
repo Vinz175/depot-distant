@@ -37,6 +37,16 @@ class Disc
      */
     private $artist;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $genre;
+
+    /**
+     * @ORM\Column(type="decimal", precision=10, scale=2)
+     */
+    private $price;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +96,30 @@ class Disc
     public function setArtist(?Artist $artist): self
     {
         $this->artist = $artist;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(string $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

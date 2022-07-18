@@ -48,6 +48,8 @@ class DiscType extends AbstractType
                 ]
             ])
             ->add('label')
+            ->add('genre')
+            ->add('price')
             ->add('artist', EntityType::class, [
                 // 'attr' => ['class' => 'form_control'],
                 "class" => Artist::class,

@@ -16,6 +16,12 @@
             {{ form_row(form.picture) }}
         </div> <!-- fin div col-6 -->
     
+        <div class="col-4">
+            {{ form_row(form.genre) }}
+        </div>
+        <div class="col-4">
+            {{ form_row(form.price) }}
+        </div>
     </div> <!-- fin div row -->
     {{ form_widget(form) }}
     <button class="btn btn-secondary float-right mr-4">{{ button_label|default('Enregistrer') }}</button>

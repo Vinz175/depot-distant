@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artist{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">{{ artist.name }}</h1>
+
+        <table class="table">
+            <tbody>
+                {% if is_granted("ROLE_ADMIN") %}
+                <tr>
+                    <th>Id</th>
+                    <td>{{ artist.id }}</td>
+                </tr>
+                {% endif %}
+
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ artist.name }}</td>
+                </tr>
+                <tr>
+                    <th>Site officiel</th>
+                    <td>
+                        <a href={{ artist.url }}>{{ artist.url }}</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    <a class="btn btn-primary ml-4" href="{{ path('app_artist_index') }}">Retour a la liste</a>
+
+        {% if is_granted("ROLE_ADMIN") %}
+            <a class="btn btn-secondary" href="{{ path('app_artist_edit', {'id': artist.id}) }}">Editer</a>
+
+            {{ include('artist/_delete_form.html.twig') }}
+        {% endif %}
+    </div>
+        {% endblock %}

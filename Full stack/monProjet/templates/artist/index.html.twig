@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artist index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">Liste des artistes</h1>
+            <br>
+            {% if is_granted("ROLE_ADMIN") %}
+                <a href="{{ path('app_artist_new') }}"><i class="fa-solid fa-circle-plus" title="Ajouter un artiste"></i></a>
+            {% endif %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <th>Id</th>
+                    {% endif %}
+                    <th>Nom</th>
+                    <th>Site officiel</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for artist in artists %}
+                <tr>
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <td>{{ artist.id }}</td>
+                    {% endif %}
+                    <td>{{ artist.name }}</td>
+                    {# <td><a 
+                    href={{ artist.url }}>{{ artist.url }}</a>
+                    </td> #}
+                    <td> 
+                        {% if artist.url == "NULL" %}
+                        {% else %}
+                        <a href={{ artist.url }}>{{ artist.url }}</a>
+                        {% endif %}
+                        
+                    </td>
+
+                    <td>
+                        <a class="ml-2" href="{{ path('app_artist_show', {'id': artist.id}) }}"><i class="fa-solid fa-eye"title="Visualiser"></i></a>
+                        {% if is_granted("ROLE_ADMIN") %}
+                        <a class="ml-2" href="{{ path('app_artist_edit', {'id': artist.id}) }}"><i class="fa-solid fa-pen-to-square" title="Editer"></i></a>
+                        {% endif %}
+
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aucun artiste trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

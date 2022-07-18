@@ -35,7 +35,9 @@ class DiscsFixtures extends Fixture
             $discDB
             ->setTitle($d['title'])
             ->setLabel($d['label'])
-            ->setPicture($d['picture']);
+            ->setPicture($d['picture'])
+            ->setGenre($d['genre'])
+            ->setprice($d['price']);
             $artist = $artistRepo->find($d['artist_id']);
             $discDB->setArtist($artist);
             $manager->persist($discDB);

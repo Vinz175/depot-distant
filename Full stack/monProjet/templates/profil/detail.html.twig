@@ -1,23 +1,46 @@
 {% extends 'base.html.twig' %}
     {% block body %}
         <div class="container">
+            <h1 class="text-center">Vos informations</h1>
             <table class="table table-light table-hover">
                 <thead>
                 <tr>
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <th>id</th>
+                    {% endif %}
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <th>Date de naissance</th>
+                    <th>Date de naisance</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>Code postal</th>
                     <th>Email</th>
+                    {# <th>Email vérifié</th> #}
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>{{ informations.lastname }}</td>
-                    <td>{{ informations.firstname }}</td>
-                    <td>{{ informations.birthdate }}</td>
-                    <td>{{ informations.email }}</td>
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <td>{{ app.user.id }}</td>
+                    {% endif %}
+                    <td>{{ app.user.nom }}</td>
+                    <td>{{ app.user.prenom }}</td>
+                    <td>{{ app.user.dob }}</td>
+                    <td>{{ app.user.adress }}</td>
+                    <td>{{ app.user.ville }}</td>
+                    <td>{{ app.user.codePostal }}</td>
+                    <td>{{ app.user.email }}</td>
+                    {# <td>{{ app.user.verified ? 'Oui' : 'Non' }}</td> #}
                 </tr>
+
                 </tbody>
             </table>
+
+            <div class="row">
+                <a class="link col-4" href="{{ path('app_forgot_password_request') }}">Changer mon mot de passe</a>
+                <a class="link col-4" href="{{ path('app_user_edit', {'id': app.user.id}) }}">Modifier mes coordonées</a>
+            </div>
         </div>
+
      {% endblock %}

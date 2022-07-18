@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.name) }}
+        </div> <!-- fin div col-6 -->
+
+        <div class="col-6">
+            {{ form_row(form.url) }}
+        </div> <!-- fin div col-6 -->    
+    </div> <!-- fin div row -->
+
+    {{ form_widget(form) }}
+    <button class="btn btn-secondary float-right mr-4" class="btn">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

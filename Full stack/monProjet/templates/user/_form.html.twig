@@ -1,18 +1,75 @@
 {{ form_start(form) }}
 
+    <div class="row">
+        <div class="col-4">
+            {{ form_row(form.nom) }}
+        </div> <!-- fin div col-6 -->
+        <div class="col-4">
+            {{ form_row(form.prenom) }}
+        </div> <!-- fin div col-6 -->
+        <div class="col-2">
+            {{ form_row(form.dob) }}
+        </div>
+            {% if is_granted("ROLE_ADMIN") %}
+            <div class="col-2">
+            {{ form_row(form.roles) }}
+            </div>
+                {% else %}
+                    {{ form_row(form.roles, {
+                        "attr": {"class": "d-none"},
+                        "label_attr": {'class': "d-none"},
+                    }) }} 
+            {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-5">
+        {{ form_row(form.adress) }}
+        </div>
+        <div class="ml-2">
+        {{ form_row(form.ville) }}
+        </div>
+        <div class="col-2 ml-2">
+        {{ form_row(form.codePostal) }}
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-4">
             {{ form_row(form.email) }}
         </div> <!-- fin div col-6 -->
     </div>
+
+    {% if is_granted("ROLE_ADMIN") %}
+        <div class="row">
+            <div class="col-8">
+                {{ form_row(form.password) }}
+            </div> <!-- fin div col-6 -->
+        </div>
+        {% else %}
+            {{ form_row(form.password, {
+                "attr": {"class": "d-none"},
+                "label_attr": {"class": "d-none"},
+            }) }}
+    {% endif %}
+
     <div class="row">
-        <div class="col-8">
-            {{ form_row(form.password) }}
-        </div> <!-- fin div col-6 -->
+            {% if is_granted("ROLE_ADMIN") %}
+            <div class="col-2">
+            {{ form_row(form.isVerified) }}
+            </div>
+                {% else %}
+                    {{ form_row(form.isVerified, {
+                        "attr": {"class": "d-none"},
+                        "label_attr": {'class': "d-none"},
+                        "help_attr": {'class': "d-none"},
+                    }) }} 
+            {% endif %}
     </div>
+
     {{ form_widget(form) }}
-
+        {# {% if is_granted("ROLE_ADMIN") %} #}
         <button class="btn btn-secondary float-right mr-4">{{ button_label|default('Sauvegarder') }}</button>
-
+        {# {% else %}
+        <a class="btn btn-secondary float-right mr-4" href="{{ path('app_profil') }}">Sauvegarder</a>
+        {% endif %} #}
 {{ form_end(form) }}

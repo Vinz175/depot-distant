@@ -26,19 +26,18 @@ $artist = array(
 
 /* `records`.`disc` */
 $disc = array(
-  array('id' => '1','artist_id' => '7','title' => 'Fugazi','picture' => 'Fugazi.jpeg','label' => 'EMI'),
-  array('id' => '2','artist_id' => '4','title' => 'Songs for the Deaf','picture' => 'Songs for the Deaf.jpeg','label' => 'Interscope Records'),
-  array('id' => '3','artist_id' => '1','title' => 'Harvest Moon','picture' => 'Harvest Moon.jpeg','label' => 'Reprise Records'),
-  array('id' => '4','artist_id' => '1','title' => 'After the Gold Rush','picture' => 'After the Gold Rush.jpeg','label' => ' Reprise Records'),
-  array('id' => '5','artist_id' => '1','title' => 'Broken Arrow','picture' => 'Broken Arrow.jpeg','label' => 'Reprise Records'),
-  array('id' => '6','artist_id' => '6','title' => 'Highway To Hell','picture' => 'Highway To Hell.jpeg','label' => 'Atlantic'),
-  array('id' => '7','artist_id' => '2','title' => 'Drama','picture' => 'Drama.jpeg','label' => 'Atlantic'),
-  array('id' => '8','artist_id' => '1','title' => 'Year of the Horse','picture' => 'Year of the Horse.jpeg','label' => 'Reprise Records'),
-  array('id' => '9','artist_id' => '1','title' => 'Ragged Glory','picture' => 'Ragged Glory.jpeg','label' => 'Reprise Records'),
-  array('id' => '10','artist_id' => '1','title' => 'Rust Never Sleeps','picture' => 'Rust Never Sleeps.jpeg','label' => 'Reprise Records'),
-  array('id' => '11','artist_id' => '1','title' => 'Exile on main street','picture' => 'Exile on main street.jpeg','label' => 'Rolling Stones Records'),
-  array('id' => '12','artist_id' => '10','title' => 'London Calling','picture' => 'London Calling.jpeg','label' => 'CBS'),
-  array('id' => '13','artist_id' => '1','title' => 'Beggars Banquet','picture' => 'Beggars Banquet.jpeg','label' => 'Rolling Stones Records'),
-  array('id' => '14','artist_id' => '9','title' => 'Laboratory of sound','picture' => 'Laboratory of sound.jpeg','label' => 'Rebel Rec.'),
-  array('id' => '15','artist_id' => '12','title' => 'Songs for the Deaf','picture' => 'https://en.wikipedia.org/wiki/Songs_for_the_Deaf#/media/File:Queens_of_the_Stone_Age_-_Songs_for_the_Deaf.png','label' => 'Interscope Records')
+  array('id' => '1','title' => 'Fugazi','year' => '1984','picture' => 'Fugazi.jpeg','label' => 'EMI','genre' => 'Prog','price' => '14.99','artist_id' => '7'),
+  array('id' => '2','title' => 'Songs for the Deaf','year' => '2002','picture' => 'Songs for the Deaf.jpeg','label' => 'Interscope Records','genre' => 'Rock/Stoner','price' => '10.00','artist_id' => '4'),
+  array('id' => '3','title' => 'Harvest Moon','year' => '1992','picture' => 'Harvest Moon.jpeg','label' => 'Reprise Records','genre' => 'Rock','price' => '4.20','artist_id' => '1'),
+  array('id' => '5','title' => 'After the Gold Rush','year' => '1970','picture' => 'After the Gold Rush.jpeg','label' => ' Reprise Records','genre' => 'Country Rock','price' => '20.00','artist_id' => '1'),
+  array('id' => '6','title' => 'Broken Arrow','year' => '1996','picture' => 'Broken Arrow.jpeg','label' => 'Reprise Records','genre' => ' Country Rock, Classic Rock','price' => '15.00','artist_id' => '1'),
+  array('id' => '7','title' => 'Highway To Hell','year' => '1979','picture' => 'Highway To Hell.jpeg','label' => 'Atlantic','genre' => 'Hard Rock','price' => '15.00','artist_id' => '6'),
+  array('id' => '8','title' => 'Drama','year' => '1980','picture' => 'Drama.jpeg','label' => 'Atlantic','genre' => 'Prog','price' => '15.00','artist_id' => '2'),
+  array('id' => '9','title' => 'Year of the Horse','year' => '1997','picture' => 'Year of the Horse.jpeg','label' => 'Reprise Records','genre' => 'Country Rock, Classic Rock','price' => '7.50','artist_id' => '1'),
+  array('id' => '10','title' => 'Ragged Glory','year' => '1990','picture' => 'Ragged Glory.jpeg','label' => 'Reprise Records','genre' => 'Country Rock, Grunge','price' => '11.00','artist_id' => '1'),
+  array('id' => '11','title' => 'Rust Never Sleeps','year' => '1979','picture' => 'Rust Never Sleeps.jpeg','label' => 'Reprise Records','genre' => 'Classic Rock, Arena Rock','price' => '15.00','artist_id' => '1'),
+  array('id' => '12','title' => 'Exile on main street','year' => '1972','picture' => 'Exile on main street.jpeg','label' => 'Rolling Stones Records','genre' => 'Blues Rock, Classic Rock','price' => '33.00','artist_id' => '1'),
+  array('id' => '13','title' => 'London Calling','year' => '1971','picture' => 'London Calling.jpeg','label' => 'CBS','genre' => 'Punk, New Wave','price' => '33.00','artist_id' => '10'),
+  array('id' => '14','title' => 'Beggars Banquet','year' => '1968','picture' => 'Beggars Banquet.jpeg','label' => 'Rolling Stones Records','genre' => 'Blues Rock, Classic Rock','price' => '33.00','artist_id' => '1'),
+  array('id' => '15','title' => 'Laboratory of sound','year' => '1995','picture' => 'Laboratory of sound.jpeg','label' => 'Rebel Rec.','genre' => 'Rock','price' => '33.00','artist_id' => '9')
 );

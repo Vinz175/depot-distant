@@ -3,38 +3,59 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container-fluid">
         <h1 class="text-center">Visualisation des utilisateurs</h1>
             <!-- icone creer utilisateur -->
             <a href="{{ path('app_user_new') }}"><i class="fa-solid fa-plus"></i></a>
 
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>Code postal</th>
                     <th>Email</th>
-                    <th>Roles</th>
-                    <th>Password</th>
-                    <th>IsVerified</th>
-                    <th>actions</th>
+                    <th>Rôle</th>
+                    {# <th>Password</th> #}
+                    <th>Email vérifié</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for user in users %}
                 <tr>
                     <td>{{ user.id }}</td>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.dob }}</td>
+                    <td>{{ user.adress }}</td>
+                    <td>{{ user.ville }}</td>
+                    <td>{{ user.codePostal }}</td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                    <td>{{ user.password }}</td>
+                    {# <td>{{ user.roles ? user.roles|json_encode : '' }} #}
+                    <td> 
+                       {% for role in user.roles %}
+                        {% if role == "ROLE_ADMIN" %}
+                            Administrateur
+                        {% else %}
+                            Utilisateur
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+
                     <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
                     <td>
-                        <a href="{{ path('app_user_show', {'id': user.id}) }}"><i class="fa-solid fa-eye"></i></a>
-                        <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                        <a class="ml-2" href="{{ path('app_user_show', {'id': user.id}) }}"><i class="fa-solid fa-eye" title="Visualiser l'utilisateur"></i></i></a>
+                        <a class="ml-2" href="{{ path('app_user_edit', {'id': user.id}) }}"><i class="fa-solid fa-pen-to-square" title="Editer"></i></a>
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="6">no records found</td>
+                    <td colspan="6">Aucun utilisateur trouvé</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -43,3 +64,5 @@
 
     </div>
 {% endblock %}
+
+
