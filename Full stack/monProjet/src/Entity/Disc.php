@@ -47,6 +47,11 @@ class Disc
      */
     private $price;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $promo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -124,5 +129,16 @@ class Disc
         return $this;
     }
 
+    public function isPromo(): ?bool
+    {
+        return $this->promo;
+    }
+
+    public function setPromo(bool $promo): self
+    {
+        $this->promo = $promo;
+
+        return $this;
+    }
 
 }

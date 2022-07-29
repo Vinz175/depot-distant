@@ -2,19 +2,29 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\DiscRepository;
+use App\Repository\ArtistRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AccueilController extends AbstractController
 {
     /**
      * @Route("/", name="app_accueil")
      */
-    public function index(): Response
+    // public function index(): Response
+    // {
+    //     return $this->render('accueil/index.html.twig', [
+    //         'controller_name' => 'AccueilController',
+    //     ]);
+    // }
+    
+    public function index(DiscRepository $discRepository, ArtistRepository $artistRepository)
     {
         return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
+            'discs' => $discRepository->findAll("promo"),
+            'artists' => $artistRepository->findAll(),
         ]);
     }
 

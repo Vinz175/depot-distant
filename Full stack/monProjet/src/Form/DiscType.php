@@ -6,8 +6,10 @@ use App\Entity\Disc;
 use App\Entity\Artist;
 use App\Repository\ArtistRepository;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,7 +36,7 @@ class DiscType extends AbstractType
         ])
             // ->add('picture')
             ->add('picture', FileType::class, [
-                'label' => 'Photo de profil',
+                'label' => 'Photo du disque',
                 //unmapped => fichier non associé à aucune propriété d'entité, validation impossible avec les annotations
                 'mapped' => false,
                 // pour éviter de recharger la photo lors de l'édition du profil
@@ -49,7 +51,8 @@ class DiscType extends AbstractType
             ])
             ->add('label')
             ->add('genre')
-            ->add('price')
+            ->add('price', textType::class, [
+                "label" => "Prix en €uros"])
             ->add('artist', EntityType::class, [
                 // 'attr' => ['class' => 'form_control'],
                 "class" => Artist::class,
@@ -57,12 +60,17 @@ class DiscType extends AbstractType
                     return $art->createQueryBuilder('artist')
                         ->orderBy('artist.name','asc');
                 },
+                "label" => "Artiste",
                 "choice_label" => "name",
                 'required' => true,    
                 "help" => "Vous devez selectionner un artiste",
                 
             ])
-        ;
+            ->add('promo', CheckboxType::class, [
+                'label' => "Mise en avant",
+                ]
+            );
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void

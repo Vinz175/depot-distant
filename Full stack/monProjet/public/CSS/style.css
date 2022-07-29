@@ -1,9 +1,15 @@
-body {
+/* body {
     background-color: #222222;
-}
+} */
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+}
+
+.gridAccueil {
+    display: grid;
+    grid-template-columns: repeat(3);
+    /* grid-gap: 20px; */
 }

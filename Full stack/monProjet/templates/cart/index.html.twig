@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+<style>
+
+</style>
+
+<div class="container">
+    <h1 class="text-center">Panier</h1>
+        <br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Disque</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for element in dataCart %}
+            <tr>
+                <td>{{ element.disc.title }}</td>
+                <td>{{ element.disc.price }} €</td>
+                <td>{{ element.quantite }}</td>
+                <td>{{ element.quantite * element.disc.price }} €</td>
+                <td>
+                <!-- bouton ajout -->
+                    <a href="{{ path("cart_add", {id: element.disc.id}) }}" title="Ajouter le même disque"
+                        class="btn btn-primary">
+                            {# <i class="fa-solid fa-cart-plus"></i> #}
+                            <i class="bi bi-cart-plus"></i>
+                    </a>
+                <!-- bouton suppression -->
+                    <a href="{{ path("cart_remove", {id: element.disc.id}) }}" title="retirer un disque"
+                        class="btn btn-primary">
+                        {# <i class="fa-solid fa-cart-minus"></i> #}
+                        <i class="bi bi-cart-dash"></i>
+                    </a>
+                <!-- bouton  supprimer-->
+                    <a href="{{ path("cart_delete", {id: element.disc.id}) }}" title="Supprimer le(s) disque(s)"
+                        class="btn btn-danger">
+                        {# <i class="fa-solid fa-cart-xmark"></i> #}
+                        <i class="bi bi-cart-x"></i>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5" class = "text-center">Votre panier est vide</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>{{ total }} €</td>
+            <td>
+                <a href="{{ path("cart_delete_all") }}" class="btn btn-danger" title="Supprimer le panier">
+                    {# <i class="fa-solid fa-cart-xmark"></i> #}
+                    <i class="bi bi-cart-x"></i>
+
+                </a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+</div>
+
+{% endblock %}

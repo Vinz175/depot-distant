@@ -1,0 +1,70 @@
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ path('app_accueil') }}">Accueil</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                    {# <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_profil') }}">Profil</a>
+                    </li> #}
+                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_form_index') }}">Disques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_artist_index') }}">Artistes</a>
+                    </li>
+            </ul>
+                <!-- barre de recherche -->
+                        {# <form class="form-inline my-2 my-lg-0 mr-2">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Recherche ..." aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Rechercher</button>
+                        </form> #}
+       
+
+                        {% if is_granted("ROLE_ADMIN") %}
+                                <div class="dropdown">
+                                    <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                       Administration
+                                    </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="{{ path('app_user_index') }}">Visualiser les utilisateurs</a>
+                                            <a class="dropdown-item" href="{{ path('app_user_new') }}">Ajouter un utilisateur</a>
+                                            {# <a class="dropdown-item" href="{{ path('app_user_delete') }}">Supprimer un utilisateur</a> #}
+                                        </div>
+                                </div>
+                        {% endif %}
+                <!-- icone panier -->
+                    <li class="nav-link">
+                        <a href="{{ path('app_cart') }}"><i class="fa-solid fa-cart-shopping" title="Panier"></i>
+                        <!-- badge nb articles -->
+                            {# <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">1</span> #}
+                        </a>
+                    </li>
+
+                <!-- fin icone panier -->
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                <!-- icone profil -->
+                    <li class="nav-link ">
+                        <a href="{{ path("app_profil")}}" title="Profil"><i class="fa-solid fa-user"></i> Bonjour, <br> {{ app.user.prenom }} {{ app.user.nom }}</a>
+                    </li>        
+                <!-- fin icone profil --> 
+                    <li class="nav-link">
+                        <a href="{{ path('app_logout')}}">Se déconnecter</a>
+                    </li>
+                {# {% else %}
+                        <li>
+                            <a class="nav-link" href="{{ path("app_login") }}">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("app_register") }}">S'enregistrer</a>
+                        </li> #}
+                {% endif %}
+        </div>
+    </nav>

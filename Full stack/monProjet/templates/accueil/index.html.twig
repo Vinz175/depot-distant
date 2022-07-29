@@ -9,18 +9,48 @@
         </div> #}
         <div class="text-center">
         <br>
-            <span>bienvenue sur notre site Velvet Record</span>
+            <span>Bienvenue sur notre site Velvet Record</span>
             <br>
-            <span>Pour visualiser le contenu, merci de vous connecter ou de vous enregistrer</span>
+            {# <span>Pour visualiser le contenu, merci de vous connecter ou de vous enregistrer</span> #}
         </div>
-        <br>
+        
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% else %}
+            <br>
             <div class="row justify-content-center">
                 <a class="btn btn-secondary ml-2" href="{{ path("app_login") }}">Se connecter</a>
                 <a class="btn btn-secondary ml-2" href="{{ path("app_register") }}">S'enregistrer</a>
             </div>
+            {% endif %}
+<br>
+<!-- ajout disques -->
+    <h3 class="text-center">Nos meilleures ventes</h3>
+        <div class="grid">
+           {% for disc in discs %}
+                {% if disc.promo == true %}
+                    <div class="card ml-4" style="5rem">
+                        <img src="{{app.request.basepath}}/images/produit/{{disc.picture}}" alt="" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ disc.title}}</h5>
+                                    <div class="card-title">{{ disc.artist.name }}</div>
+                                        <p class="text text-muted">Label: {{ disc.label }}</p>
+                                        <p class="text text-muted">Genre: {{ disc.genre }}</p>
+                                        <p class="text text-primary">Prix: {{ disc.price }} &nbsp€</p>
+                                            <a class="ml-2" href="{{ path('app_form_show', {'id': disc.id}) }}"><i class="fa-solid fa-eye" title="Visualiser le disque"></i></a>
+                                                {% if is_granted("ROLE_ADMIN") %}
+                                                    <a class="ml-2" href="{{ path('app_form_edit', {'id': disc.id}) }}"><i class="fa-solid fa-pen-to-square" title="Editer"></i></a>
+                                                {% endif %}
+                                        <!-- bouton ajouter au panier -->
+                                        <a class="float-right" href="{{ path("cart_add", {id: disc.id}) }}" title="Ajouter au panier">
+                                            <i class="bi bi-cart-plus"></i>
+                                        </a>    
+                                    </div>
+                    </div>
+                {% endif %}
+        {% endfor %}
+        </div>
+        <!-- fin ajout disques -->
 
     </div>
-
-
-
+    <br>
     {% endblock %}

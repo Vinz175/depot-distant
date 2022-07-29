@@ -43,7 +43,30 @@ class FormController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $discRepository->add($disc, true);
+
+            $idDisc = $disc->getId();
+
+            // récupération de la saisi sur l'upload
+            $pictureFile = $form['picture']->getData();
+
+            // vérification s'il y a un upload photo
+                if ($pictureFile) {
+                    // renommage du fichier
+                    // nom du fichier + extension
+                    $newPicture = $idDisc . '.' . $pictureFile->guessExtension();
+                // assignation de la valeur à la propriété picture à l'aide du setter
+                    $disc->setPicture($newPicture);
+                    try {
+                        // déplacement du fichier vers le répertoire de destination sur le serveur
+                        $pictureFile->move(
+                            $this->getParameter('photo_directory'),
+                            $newPicture
+                        );
+                    } catch (FileException $e) {
+                    // gestion de l'erreur si le déplacement ne s'est pas effectué
+                    }
+                }
+                    $discRepository->add($disc, true);
 
             $this->addFlash(
                 'success',

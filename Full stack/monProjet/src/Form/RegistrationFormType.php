@@ -93,7 +93,7 @@ class RegistrationFormType extends AbstractType
             // ->add('codePostal', TextType::class, [
             //     "constraints" => [
             //         new NotBlank([
-            //             "message" => "Entrez le site officiel de l'artiste",
+            //             "message" => "Entrez votre code postal",
             //         ])
             //     ]
             // ])
